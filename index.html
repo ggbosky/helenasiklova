@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap&subset=latin-ext" rel="stylesheet" />
   <link rel="preload" as="image" href="img/helena.webp" type="image/webp" />
-  <link rel="stylesheet" href="styles.css?v=6" />
+  <link rel="stylesheet" href="styles.css?v=7" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -139,6 +139,10 @@
 
   <!-- PROČ DOMA -->
   <section class="home" id="proc">
+    <picture class="home__bg" aria-hidden="true">
+      <source type="image/webp" srcset="img/podzim.webp" />
+      <img src="img/podzim.jpg" width="660" height="824" alt="" loading="lazy" decoding="async" />
+    </picture>
     <div class="wrap home__in">
       <div class="home__text" data-reveal>
         <h2 class="h2">Žádná čekárna. Žádné balení kočárku.</h2>
@@ -149,13 +153,6 @@
           <li><b>Šetříte čas i síly</b><span>Hlavně v šestinedělí nebo když máte doma víc dětí.</span></li>
         </ul>
       </div>
-      <figure class="home__img" data-reveal>
-        <picture>
-          <source type="image/webp" srcset="img/podzim.webp" />
-          <img src="img/podzim.jpg" width="660" height="824" alt="" loading="lazy" decoding="async" />
-        </picture>
-        <blockquote><p>„Mými pacienty jsou často miminka od 1 týdne věku.“</p><cite>Helena</cite></blockquote>
-      </figure>
     </div>
   </section>
 

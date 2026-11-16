@@ -155,23 +155,21 @@ p { margin: 0 0 1em; }
 .more:hover::after { transform: translateX(4px); }
 
 /* Proč doma – tmavý pás s fotkou */
-.home { background: var(--bark); color: var(--on-dark); padding: var(--sec-y) 0; overflow: hidden; }
-.home__in { display: grid; grid-template-columns: 1.15fr .85fr; gap: clamp(32px, 6vw, 96px); align-items: center; }
+.home { position: relative; background: var(--bark); color: var(--on-dark); padding: var(--sec-y) 0; overflow: hidden; }
+.home__bg { position: absolute; inset: 0 0 0 auto; width: min(58vw, 900px); opacity: .5;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,.5) 45%, #000 100%); mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,.5) 45%, #000 100%); }
+.home__bg img { width: 100%; height: 100%; object-fit: cover; }
+.home__in { position: relative; }
 .home .h2 { font-size: clamp(34px, 4.6vw, 60px); max-width: 11em; }
-.home .lead { color: var(--on-dark-muted); }
-.home__pts { list-style: none; margin: 36px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.home .lead { color: var(--on-dark-muted); max-width: 34em; }
+.home__pts { list-style: none; margin: clamp(40px, 5vw, 64px) 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .home__pts li { display: grid; gap: 8px; align-content: start; padding-top: 18px; border-top: 2px solid var(--amber); }
 .home__pts b { font: 700 18px/1.25 var(--font-head); letter-spacing: -.01em; color: var(--on-dark); }
 .home__pts span { font-size: 15.5px; color: var(--on-dark-muted); }
-.home__img { position: relative; margin: 0; border-radius: 200px 200px 28px 28px; overflow: hidden; aspect-ratio: 4 / 5; }
-.home__img img { width: 100%; height: 100%; object-fit: cover; }
-.home__img blockquote { position: absolute; inset: auto 0 0 0; margin: 0; padding: 80px 28px 28px; background: linear-gradient(180deg, transparent, rgba(30, 20, 15, .85)); }
-.home__img blockquote p { font: 700 clamp(21px, 2vw, 26px)/1.25 var(--font-head); letter-spacing: -.02em; color: #fff; margin: 0 0 10px; }
-.home__img cite { font-style: normal; font-size: 14px; color: var(--amber); }
 
 /* Postup – karty, linka se jednou dokreslí */
 .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; position: relative; }
-.steps::before { content: ""; position: absolute; left: 12%; right: 12%; top: 54px; height: 2px; background: var(--copper); opacity: .35; transform: scaleX(0); transform-origin: left; transition: transform 1.4s var(--ease-out); }
+.steps::before { content: ""; position: absolute; left: 12%; right: 12%; top: calc(50% - 1px); height: 2px; background: var(--copper); opacity: .35; transform: scaleX(0); transform-origin: left; transition: transform 1.4s var(--ease-out); }
 .steps.is-in::before { transform: scaleX(1); }
 .steps li { position: relative; background: var(--cream); border-radius: 24px; padding: 28px 24px 30px; display: grid; gap: 8px; align-content: start; }
 .steps__ico { width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; background: var(--copper); color: #fff; margin-bottom: 10px; box-shadow: 0 0 0 6px var(--cream); }
@@ -256,10 +254,10 @@ p { margin: 0 0 1em; }
   .portrait { position: relative; inset: auto; top: auto; right: auto; width: 100%; aspect-ratio: auto; height: min(100vw, 560px); margin-bottom: -56px;
     -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent 100%); mask-image: linear-gradient(to bottom, #000 55%, transparent 100%); }
   .portrait__img img { object-position: 60% 25%; }
-  .split, .me, .home__in { grid-template-columns: 1fr; }
+  .split, .me { grid-template-columns: 1fr; }
+  .home__bg { width: 100%; opacity: .32; }
   .bento { grid-template-columns: 1fr 1fr; }
   .care--big { grid-template-columns: 1fr; }
-  .home__img { max-width: 420px; }
   .steps { grid-template-columns: 1fr 1fr; }
   .steps::before { display: none; }
   .me__card { position: static; }
@@ -271,7 +269,6 @@ p { margin: 0 0 1em; }
   .bento, .qa, .home__pts, .steps { grid-template-columns: 1fr; }
   .checks { grid-template-columns: 1fr; }
   .care { border-radius: 24px; }
-  .home__img { aspect-ratio: 1; border-radius: 160px 160px 24px 24px; }
   .steps li { grid-template-columns: 52px 1fr; column-gap: 16px; padding: 20px; }
   .steps__ico { grid-row: span 2; margin: 0; }
   .form { grid-template-columns: 1fr; }
