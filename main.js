@@ -27,6 +27,15 @@ const spy = new IntersectionObserver(entries => {
 }, { rootMargin: '-45% 0px -50% 0px' });
 links.forEach(a => { const s = document.querySelector(a.hash); if (s) spy.observe(s); });
 
+// spodní tlačítko na mobilu: schovat, když je vidět jiné „Objednat“ (hero, formulář)
+const dock = document.querySelector('.dock');
+const seen = new Set();
+const dockIo = new IntersectionObserver(entries => {
+  for (const e of entries) e.isIntersecting ? seen.add(e.target) : seen.delete(e.target);
+  dock.classList.toggle('is-hidden', seen.size > 0);
+});
+document.querySelectorAll('.hero__cta, #objednat').forEach(el => dockIo.observe(el));
+
 // formulář
 const form = document.querySelector('[data-form]');
 const note = form.querySelector('[data-form-note]');

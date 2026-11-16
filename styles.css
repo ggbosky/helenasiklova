@@ -100,9 +100,9 @@ p { margin: 0 0 1em; }
 .stats dd { margin: 0; font: 700 clamp(26px, 2.8vw, 36px)/1 var(--font-head); letter-spacing: -.03em; }
 .stats dt { font-size: 14px; color: var(--muted); margin-top: 6px; max-width: 13em; line-height: 1.4; }
 
-.portrait { position: absolute; right: 0; top: calc(50% + 24px); transform: translateY(-50%); width: min(47vw, 660px); aspect-ratio: 1; margin: 0; opacity: 0; transition: opacity var(--dur-slow) var(--ease-out);
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,.45) 28%, #000 60%), linear-gradient(to bottom, transparent 0%, #000 18%, #000 74%, transparent 100%);
-  mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,.45) 28%, #000 60%), linear-gradient(to bottom, transparent 0%, #000 18%, #000 74%, transparent 100%);
+.portrait { position: absolute; right: 0; top: 0; width: min(62vw, 880px); aspect-ratio: 1; margin: 0; opacity: 0; transition: opacity var(--dur-slow) var(--ease-out);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,.35) 30%, #000 68%), linear-gradient(to bottom, rgba(0,0,0,.75) 0%, #000 12%, #000 72%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,.35) 30%, #000 68%), linear-gradient(to bottom, rgba(0,0,0,.75) 0%, #000 12%, #000 72%, transparent 100%);
   -webkit-mask-composite: source-in; mask-composite: intersect; }
 .portrait.is-in, .no-js .portrait { opacity: 1; }
 .portrait__img { display: block; width: 100%; height: 100%; }
@@ -253,7 +253,7 @@ p { margin: 0 0 1em; }
   .burger { display: block; box-shadow: 0 0 0 1px var(--line); }
   .hero { padding-top: 0; }
   .hero__text { max-width: none; }
-  .portrait { position: relative; inset: auto; top: auto; right: auto; transform: none; width: 100%; aspect-ratio: auto; height: min(100vw, 560px); margin-bottom: -56px;
+  .portrait { position: relative; inset: auto; top: auto; right: auto; width: 100%; aspect-ratio: auto; height: min(100vw, 560px); margin-bottom: -56px;
     -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent 100%); mask-image: linear-gradient(to bottom, #000 55%, transparent 100%); }
   .portrait__img img { object-position: 60% 25%; }
   .split, .me, .home__in { grid-template-columns: 1fr; }
@@ -277,5 +277,6 @@ p { margin: 0 0 1em; }
   .form { grid-template-columns: 1fr; }
   .field--half { grid-column: 1 / -1; }
   .contact li { grid-template-columns: 90px 1fr; }
-  .dock { display: flex; position: fixed; left: 16px; right: 16px; bottom: 14px; z-index: 40; }
+  .dock { display: flex; position: fixed; left: 16px; right: 16px; bottom: 14px; z-index: 40; transition: opacity var(--dur-micro), transform var(--dur-micro), visibility var(--dur-micro); }
+  .dock.is-hidden { opacity: 0; visibility: hidden; transform: translateY(16px); pointer-events: none; }
 }
