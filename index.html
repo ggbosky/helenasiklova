@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap&subset=latin-ext" rel="stylesheet" />
   <link rel="preload" as="image" href="img/helena.webp" type="image/webp" />
-  <link rel="stylesheet" href="styles.css?v=4" />
+  <link rel="stylesheet" href="styles.css?v=5" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -40,17 +40,15 @@
 
 <header class="top" data-top>
   <div class="wrap top__in">
-    <a class="brand" href="#top" aria-label="Helena Šiklová – na začátek">
-      <span class="brand__avatar"><img src="img/helena-160.jpg" width="80" height="80" alt="" /></span>
-      <span class="brand__txt">Helena Šiklová<small>Mobilní fyzioterapie · Praha-západ</small></span>
-    </a>
-    <nav class="nav" aria-label="Hlavní navigace">
-      <a href="#pomoc">S čím pomůžu</a>
-      <a href="#jak">Jak to probíhá</a>
-      <a href="#o-mne">O mně</a>
-      <a href="#otazky">Otázky</a>
-    </nav>
-    <a class="btn btn--primary btn--sm top__cta" href="#objednat">Objednat návštěvu</a>
+    <div class="top__bar">
+      <nav class="nav" aria-label="Hlavní navigace">
+        <a href="#pomoc">S čím pomůžu</a>
+        <a href="#jak">Jak to probíhá</a>
+        <a href="#o-mne">O mně</a>
+        <a href="#otazky">Otázky</a>
+      </nav>
+      <a class="btn btn--primary btn--sm top__cta" href="#objednat">Objednat návštěvu</a>
+    </div>
     <button class="burger" type="button" aria-label="Otevřít menu" aria-controls="menu" data-menu-open><span></span><span></span></button>
   </div>
 </header>
@@ -71,6 +69,12 @@
 
   <!-- HERO -->
   <section class="hero" id="top">
+    <figure class="portrait">
+      <picture class="portrait__img">
+        <source type="image/webp" srcset="img/helena-480.webp 480w, img/helena.webp 800w" sizes="(max-width: 960px) 100vw, 52vw" />
+        <img src="img/helena.jpg" width="800" height="800" alt="Fyzioterapeutka Helena Šiklová" fetchpriority="high" decoding="async" />
+      </picture>
+    </figure>
     <div class="wrap hero__grid">
       <div class="hero__text">
         <h1 class="hero__title">Fyzioterapie s láskou a respektem. <em>Přímo u vás doma.</em></h1>
@@ -85,13 +89,6 @@
           <div><dt>dětské, ženské i dospělé péče</dt><dd>3 obory</dd></div>
         </dl>
       </div>
-      <figure class="portrait">
-        <svg class="portrait__ring" viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="98" pathLength="1" /></svg>
-        <picture class="portrait__img">
-          <source type="image/webp" srcset="img/helena-480.webp 480w, img/helena.webp 800w" sizes="(max-width: 899px) 78vw, 36vw" />
-          <img src="img/helena.jpg" width="800" height="800" alt="Fyzioterapeutka Helena Šiklová" fetchpriority="high" decoding="async" />
-        </picture>
-      </figure>
     </div>
   </section>
 
